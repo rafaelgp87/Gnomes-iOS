@@ -1,0 +1,121 @@
+//
+//  ViewController.swift
+//  Gnomes
+//
+//  Created by Rafael Gutiérrez on 03/07/20.
+//  Copyright © 2020 Rafael Gutiérrez. All rights reserved.
+//
+
+import UIKit
+
+struct StructGnomes: Decodable {
+    let Brastlewark: [Gnome]
+}
+
+struct Gnome: Decodable {
+    let id: Int
+    let name: String
+    let thumbnail: String
+}
+
+class ViewController: UIViewController, UICollectionViewDataSource, UISearchBarDelegate {
+    
+    var gnomes = [Gnome]()
+    var gnomesData = [Gnome]()
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.dataSource = self
+        
+        let url = URL(string: "https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json")
+        
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            //Brastlewark
+            if error == nil {
+                
+                //guard let data = data else { return }
+                
+                do {
+                    /*
+                    if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
+                        var gnomeArray = [Any]()
+                        gnomeArray = [jsonObj.value(forKey: "Brastlewark")!]
+                    }*/
+                
+                    //print(gnomeArray[0])
+                    let test = try JSONDecoder().decode(StructGnomes.self, from: data!)
+                
+                    //print(test.Brastlewark)
+                    
+                    for g in test.Brastlewark {
+                        self.gnomes.append(g)
+                    }
+                    
+                    self.gnomesData = self.gnomes
+                    
+                } catch {
+                    print("Error")
+                }
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+            
+        }.resume()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return gnomes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CollectionViewCell
+        
+        cell.nameLbl.text = gnomes[indexPath.row].name.capitalized
+        
+        let imageUrlString = gnomes[indexPath.row].thumbnail
+        
+        if let url = URL(string: imageUrlString) {
+            do {
+                let data = try Data(contentsOf: url)
+                cell.imageView.image = UIImage(data: data)
+            } catch let error {
+                print("Error al cargar la imágen: \(error)")
+            }
+        }
+        
+        cell.imageView.clipsToBounds = true
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.height / 2
+        cell.imageView.contentMode = .scaleAspectFill
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let searchView: UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SearchBar", for: indexPath)
+        
+        return searchView
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.gnomes.removeAll()
+        
+        for g in self.gnomesData {
+            if (g.name.lowercased().contains(searchBar.text!.lowercased())) {
+                self.gnomes.append(g)
+            }
+        }
+        
+        if (searchBar.text!.isEmpty) {
+            self.gnomes = self.gnomesData
+        }
+        
+        self.collectionView.reloadData()
+    }
+}
+
