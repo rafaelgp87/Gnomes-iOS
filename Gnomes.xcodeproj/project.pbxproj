@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0541C32424B3A11700E29142 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541C32324B3A11700E29142 /* Models.swift */; };
 		055CE3CD24AFE09D0023B06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CE3CC24AFE09D0023B06E /* AppDelegate.swift */; };
 		055CE3CF24AFE09D0023B06E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CE3CE24AFE09D0023B06E /* SceneDelegate.swift */; };
 		055CE3D124AFE09D0023B06E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CE3D024AFE09D0023B06E /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0541C32324B3A11700E29142 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		055CE3C924AFE09D0023B06E /* Gnomes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gnomes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055CE3CC24AFE09D0023B06E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		055CE3CE24AFE09D0023B06E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0541C32024B3A08800E29142 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				055CE3D024AFE09D0023B06E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0541C32124B3A09E00E29142 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0541C32324B3A11700E29142 /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0541C32224B3A0A800E29142 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0587C0EF24B17B460082F334 /* CollectionViewCell.swift */,
+				0587C0F124B2B44C0082F334 /* SearchBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		055CE3C024AFE09C0023B06E = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +87,15 @@
 		055CE3CB24AFE09D0023B06E /* Gnomes */ = {
 			isa = PBXGroup;
 			children = (
+				0541C32124B3A09E00E29142 /* Model */,
+				0541C32024B3A08800E29142 /* Controller */,
+				0541C32224B3A0A800E29142 /* View */,
 				055CE3CC24AFE09D0023B06E /* AppDelegate.swift */,
 				055CE3CE24AFE09D0023B06E /* SceneDelegate.swift */,
-				055CE3D024AFE09D0023B06E /* ViewController.swift */,
 				055CE3D224AFE09D0023B06E /* Main.storyboard */,
-				055CE3D524AFE0B50023B06E /* Assets.xcassets */,
 				055CE3D724AFE0B50023B06E /* LaunchScreen.storyboard */,
+				055CE3D524AFE0B50023B06E /* Assets.xcassets */,
 				055CE3DA24AFE0B50023B06E /* Info.plist */,
-				0587C0EF24B17B460082F334 /* CollectionViewCell.swift */,
-				0587C0F124B2B44C0082F334 /* SearchBarView.swift */,
 			);
 			path = Gnomes;
 			sourceTree = "<group>";
@@ -147,6 +174,7 @@
 				0587C0F224B2B44C0082F334 /* SearchBarView.swift in Sources */,
 				055CE3D124AFE09D0023B06E /* ViewController.swift in Sources */,
 				055CE3CD24AFE09D0023B06E /* AppDelegate.swift in Sources */,
+				0541C32424B3A11700E29142 /* Models.swift in Sources */,
 				0587C0F024B17B460082F334 /* CollectionViewCell.swift in Sources */,
 				055CE3CF24AFE09D0023B06E /* SceneDelegate.swift in Sources */,
 			);

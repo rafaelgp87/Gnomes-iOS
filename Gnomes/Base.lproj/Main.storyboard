@@ -15,9 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark-fog-forest-haze-6992" translatesAutoresizingMaskIntoConstraints="NO" id="zSE-Gj-WrT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvu-PN-YHs">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9cm-3D-1PN">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7NH-b6-iQl">
                                 <rect key="frame" x="5" y="44" width="411" height="818"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mso-Nn-DBr">
                                     <size key="itemSize" width="167" height="187"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
@@ -77,15 +88,23 @@
                             <constraint firstItem="7NH-b6-iQl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="80R-ar-sOx"/>
                             <constraint firstAttribute="trailing" secondItem="7NH-b6-iQl" secondAttribute="trailing" constant="15" id="8aJ-nE-mqf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7NH-b6-iQl" secondAttribute="trailing" id="8xd-ag-1zg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zvu-PN-YHs" secondAttribute="trailing" id="J1Y-U6-96r"/>
+                            <constraint firstItem="zSE-Gj-WrT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JaA-hE-1ED"/>
                             <constraint firstItem="7NH-b6-iQl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="2" id="KlY-Ub-teG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zSE-Gj-WrT" secondAttribute="trailing" id="OCR-o0-x1M"/>
                             <constraint firstAttribute="trailing" secondItem="7NH-b6-iQl" secondAttribute="trailing" constant="10" id="P5t-Wa-DJW"/>
                             <constraint firstItem="7NH-b6-iQl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="QdA-we-GhQ"/>
                             <constraint firstItem="7NH-b6-iQl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WJt-QO-n6x"/>
+                            <constraint firstItem="zvu-PN-YHs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XFu-ls-adH"/>
                             <constraint firstItem="7NH-b6-iQl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="YFP-F9-Tyq"/>
+                            <constraint firstItem="zSE-Gj-WrT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bZu-HP-03s"/>
                             <constraint firstAttribute="trailing" secondItem="7NH-b6-iQl" secondAttribute="trailing" constant="-5" id="d4L-L9-uNS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zSE-Gj-WrT" secondAttribute="bottom" id="d5Z-Mf-z9z"/>
                             <constraint firstItem="7NH-b6-iQl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gow-uv-knh"/>
                             <constraint firstItem="7NH-b6-iQl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="kLB-4G-IUn"/>
+                            <constraint firstItem="zvu-PN-YHs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tpA-vP-UcC"/>
                             <constraint firstItem="7NH-b6-iQl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vrL-Om-brP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zvu-PN-YHs" secondAttribute="bottom" id="vxz-QE-aZi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7NH-b6-iQl" secondAttribute="bottom" id="z7X-Dg-cwn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,4 +118,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dark-fog-forest-haze-6992" width="4928" height="3264"/>
+    </resources>
 </document>
