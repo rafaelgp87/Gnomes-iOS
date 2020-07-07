@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UISearchBarDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     
     var gnomes = [Gnome]()
     var gnomesData = [Gnome]()
@@ -19,6 +19,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UISearchBarD
         super.viewDidLoad()
         
         collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        self.navigationController?.isNavigationBarHidden = true
         
         let url = URL(string: "https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json")
         
@@ -56,6 +59,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UISearchBarD
             }
             
         }.resume()
+        
+        self.collectionView.isUserInteractionEnabled = true
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,6 +90,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UISearchBarD
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        
+        vc?.nameD = self.gnomes[indexPath.row].name
+        vc?.thumbnailD = self.gnomes[indexPath.row].thumbnail
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let searchView: UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SearchBar", for: indexPath)
@@ -107,5 +122,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UISearchBarD
         
         self.collectionView.reloadData()
     }
+
 }
 

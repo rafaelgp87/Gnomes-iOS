@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0541C32424B3A11700E29142 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541C32324B3A11700E29142 /* Models.swift */; };
+		0541C32624B3BEA900E29142 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541C32524B3BEA900E29142 /* DetailViewController.swift */; };
 		055CE3CD24AFE09D0023B06E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CE3CC24AFE09D0023B06E /* AppDelegate.swift */; };
 		055CE3CF24AFE09D0023B06E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CE3CE24AFE09D0023B06E /* SceneDelegate.swift */; };
 		055CE3D124AFE09D0023B06E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CE3D024AFE09D0023B06E /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0541C32324B3A11700E29142 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		0541C32524B3BEA900E29142 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		055CE3C924AFE09D0023B06E /* Gnomes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gnomes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055CE3CC24AFE09D0023B06E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		055CE3CE24AFE09D0023B06E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				055CE3D024AFE09D0023B06E /* ViewController.swift */,
+				0541C32524B3BEA900E29142 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				0541C32424B3A11700E29142 /* Models.swift in Sources */,
 				0587C0F024B17B460082F334 /* CollectionViewCell.swift in Sources */,
 				055CE3CF24AFE09D0023B06E /* SceneDelegate.swift in Sources */,
+				0541C32624B3BEA900E29142 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
