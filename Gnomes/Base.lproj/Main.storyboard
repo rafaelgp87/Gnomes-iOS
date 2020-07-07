@@ -81,6 +81,11 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="s2L-Vg-E7Q">
+                                <rect key="frame" x="1" y="61" width="411" height="774"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -111,6 +116,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vAi-hh-XpH"/>
                     <connections>
+                        <outlet property="activity" destination="s2L-Vg-E7Q" id="Djw-L5-sTW"/>
                         <outlet property="collectionView" destination="7NH-b6-iQl" id="QZW-cI-C5a"/>
                         <segue destination="tvi-qI-30h" kind="show" id="Wm3-YU-ieV"/>
                     </connections>

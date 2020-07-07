@@ -13,6 +13,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var gnomes = [Gnome]()
     var gnomesData = [Gnome]()
     
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -20,6 +21,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        activity.startAnimating()
+        activity.hidesWhenStopped = true
         
         self.navigationController?.isNavigationBarHidden = true
         
@@ -86,7 +89,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.imageView.clipsToBounds = true
         cell.imageView.layer.cornerRadius = cell.imageView.frame.height / 2
         cell.imageView.contentMode = .scaleAspectFill
-        
+        activity.stopAnimating()
         return cell
     }
     
