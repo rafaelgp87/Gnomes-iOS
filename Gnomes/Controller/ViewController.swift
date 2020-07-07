@@ -103,6 +103,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         vc?.heightD = self.gnomes[indexPath.row].height
         vc?.hair_colorD = self.gnomes[indexPath.row].hair_color
         
+        var professions = ""
+        
+        for p in self.gnomes[indexPath.row].professions {
+            professions = professions + p + ", "
+        }
+        
+        vc?.professionsD = String(professions.dropLast(2))
+        
+        var friends = ""
+        
+        for f in self.gnomes[indexPath.row].friends {
+            friends = friends + f + ", "
+        }
+        
+        vc?.friendsD = String(friends.dropLast(2))
+        
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }

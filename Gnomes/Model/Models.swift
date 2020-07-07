@@ -20,4 +20,6 @@ struct Gnome: Decodable {
     let weight: Float
     let height: Float
     let hair_color: String
+    let professions: [String]
+    let friends: [String]
 }
