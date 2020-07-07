@@ -98,6 +98,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         vc?.nameD = self.gnomes[indexPath.row].name
         vc?.thumbnailD = self.gnomes[indexPath.row].thumbnail
+        vc?.ageD = self.gnomes[indexPath.row].age
+        vc?.weightD = self.gnomes[indexPath.row].weight
+        vc?.heightD = self.gnomes[indexPath.row].height
+        vc?.hair_colorD = self.gnomes[indexPath.row].hair_color
         
         self.navigationController?.pushViewController(vc!, animated: true)
         

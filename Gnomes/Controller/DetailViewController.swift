@@ -12,9 +12,17 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var nameDLbl: UILabel!
     @IBOutlet weak var imageViewD: UIImageView!
+    @IBOutlet weak var age: UILabel!
+    @IBOutlet weak var weight: UILabel!
+    @IBOutlet weak var height: UILabel!
+    @IBOutlet weak var hairColor: UILabel!
     
     var nameD:String = ""
     var thumbnailD:String = ""
+    var ageD:Int = 0
+    var weightD:Float = 0.0
+    var heightD:Float = 0.0
+    var hair_colorD:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +39,10 @@ class DetailViewController: UIViewController {
                 print("Error al cargar la imágen: \(error)")
             }
         }
+        
+        age.text = String(ageD)
+        weight.text = String(weightD)
+        height.text = String(heightD)
+        hairColor.text = hair_colorD
     }
 }
